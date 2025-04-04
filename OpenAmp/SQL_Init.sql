@@ -9,6 +9,8 @@ create table Users(
 CREATE TABLE Playlists(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     PlaylistName TEXT,
+    PlaylistUploader TEXT,
+    FOREIGN KEY("PlaylistUploader") REFERENCES "Users"("id")
 )
 
 CREATE TABLE Songs(
@@ -18,10 +20,12 @@ CREATE TABLE Songs(
     serverdirtosong TEXT,
     SongDuration INTEGER,
     PlaylistId INTEGER,
+    SongUploader TEXT,
+    FOREIGN KEY("SongUploader") REFERENCES "Users"("id")
     FOREIGN KEY("PlaylistId") REFERENCES "Playlists"("id")
 )
 
-CREATE TABLE UserSongPlaylists(
+/*CREATE TABLE UserSongPlaylists(
     id INTEGER PRIMARY KEY AUTOINCREMENT,
     Userid INTEGER,
     Songid INTEGER,
@@ -29,4 +33,4 @@ CREATE TABLE UserSongPlaylists(
     FOREIGN KEY("Userid") REFERENCES "Users"("id")
     FOREIGN KEY("Songid") REFERENCES "Songs"("id")
     FOREIGN KEY("PlaylistId") REFERENCES "Playlists"("id")
-)
+)*/
