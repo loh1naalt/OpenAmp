@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    {% block head %}
+    <head>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-DQvkBjpPgn7RC31MCQoOeC9TI2kdqa4+BSgNMNj8v77fdC77Kj5zpWFTJaaAoMbC" crossorigin="anonymous">
+
+        <title>Openamp</title>
+    </head>
+    {% endblock %}
+    <body>
+        {% block body %}
+
+            <div class="login">
+                <p class="text-center fs-1">Welcome to the Openamp</p>
+            </div>
+            <form action="/login" method="POST">
+                <div class="d-flex flex-sm-column bd-highlight mb-3 justify-content-center">
+                <input type="text" name="Username" id="Username" class="p-2 bd-highlight mx-auto">
+                <input type="text" name="Password" id="Password" class="p-2 bd-highlight mx-auto">
+                <input type="submit" name="button" value="login" class="p-2 bd-highlight mx-auto btn btn-primary" style="width: 217px;">
+                <input type="submit" name="button" value="register" class="p-2 bd-highlight mx-auto btn btn-secondary" style="width: 217px;">
+                </div>
+            </form>
+        {% endblock %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.4/dist/js/bootstrap.bundle.min.js" integrity="sha384-YUe2LzesAfftltw+PEaao2tjU/QATaW/rOitAq67e0CT0Zi2VVRL0oC4+gAaeBKu" crossorigin="anonymous"></script>
+
+       
+    </body>
+</html>
