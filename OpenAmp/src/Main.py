@@ -13,11 +13,16 @@ class MainApp:
 
     @app.route('/', methods = ['POST', 'GET'])
     def index():
-        return render_template("main.html")
+        mainsrv = MainService.Mainservice()
+        return mainsrv.Mainpage()
     @app.route('/login', methods = ['GET', 'POST'])
     def login():
         loginsrv = loginService.Loginservice()
         return loginsrv.login()
+    @app.route('/logout', methods = ['GET', 'POST'])
+    def logout():
+        loginsrv = loginService.Loginservice()
+        return loginsrv.logout()
 
 
 if __name__ == '__main__':

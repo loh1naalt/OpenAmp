@@ -52,3 +52,7 @@ class Loginservice:
                         return redirect('/login')
         else:
             return render_template('login.html')
+    def logout(self):
+        self.app.Username = ''
+        self.app.Username_role = ''
+        return redirect('/')
